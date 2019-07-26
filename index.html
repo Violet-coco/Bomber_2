@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>经典炸弹人</title>
+    <script src="js/Game.js"></script>
+    <script src="js/Map.js"></script>
+    <script src="js/Time.js"></script>
+    <script src="js/Player.js"></script>
+    <script src="js/Bomb.js"></script>
+    <script src="js/Enemy.js"></script>
+    <script src="js/Cell.js"></script>
+</head>
+<body>
+<div id="box" style="width: 680px;height: 600px;margin: auto;position:relative;background-color:#b8b8b8;">
+    <canvas id="myCanvas" width="680" height="520" style="border:1px solid #d3d3d3;margin-top: 80px;">
+    </canvas>
+</div>
+</body>
+
+<script>
+    game = new Game();
+    game.init();
+    setInterval('game.run()',100);
+
+    time = new Time();
+    time.init();
+    setInterval('time.run()',1000);
+    document.onkeypress=function (ev) {
+        game.onkeypress(ev.keyCode);
+    }
+</script>
+</html>
